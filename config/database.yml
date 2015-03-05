@@ -83,3 +83,5 @@ production:
   database: jetmanager_production
   username: jetmanager
   password: <%= ENV['JETMANAGER_DATABASE_PASSWORD'] %>
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV['MAX_THREADS'] %>
