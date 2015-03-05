@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #MY GEMS
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'rails_12factor', group: :production
+gem 'puma'
 
 
 # Use ActiveModel has_secure_password
