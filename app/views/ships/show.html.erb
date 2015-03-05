@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ship.name %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @ship.kind %>
+</p>
+
+<p>
+  <strong>Registration number:</strong>
+  <%= @ship.registration_number %>
+</p>
+
+<p>
+  <strong>Insurance due date:</strong>
+  <%= @ship.insurance_due_date %>
+</p>
+
+<p>
+  <strong>Registration due date:</strong>
+  <%= @ship.registration_due_date %>
+</p>
+
+<%= link_to 'Edit', edit_ship_path(@ship) %> |
+<%= link_to 'Back', ships_path %>
