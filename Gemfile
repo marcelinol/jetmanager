@@ -30,6 +30,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'rails_12factor', group: :production
 gem 'puma'
 gem 'certified'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 
 # Use ActiveModel has_secure_password
