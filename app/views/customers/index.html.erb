@@ -20,8 +20,12 @@
         <tr>
           <td><%= link_to customer.name, customer %></td>
           <td><%= customer.cellphone %></td>
-          <td><%= link_to @ship.name, @ship  %></td>
-          <td><%= @ship.insurance_due_date %>
+          <% if @ship %>
+            <td><%= link_to @ship.name, @ship  %></td>
+            <td><%= @ship.insurance_due_date %>
+          <% else %>
+            <td></td><td></td>
+          <% end %>
           <td><%= link_to 'Editar', edit_customer_path(customer) %></td>
         </tr>
       <% end %>
