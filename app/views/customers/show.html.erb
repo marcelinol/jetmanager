@@ -1,49 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @customer.name %>
-</p>
+<div class='page-header'>
+  <h1><%= @customer.name %></h1>
+</div>
+
+<div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <tbody>
+              <tr>
+                <% @customer.attributes.each do |attr| %>
+                  <tr>
+                    <td><b><%= attr.first %></b><td>
+                    <td><%= attr.last %></td>
+                  </tr>
+                <% end %>
+                <% @customer.ships.each do |ship| %>
+                  <tr>
+                    <td><b>Embarcação</b></td>
+                    <td><%= link_to ship.name, ship %><td>
+                  </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>
 
 <p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
+  <button type="button" class="btn btn-default">
+    <%= link_to 'Editar', edit_customer_path(@customer) %>
+  </button>
 </p>
-
 <p>
-  <strong>Cellphone:</strong>
-  <%= @customer.cellphone %>
+  <button type="button" class="btn btn-default">
+    <%= link_to 'Ir para a lista de clientes', customers_path %>
+  </button>
 </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @customer.address %>
-</p>
-
-<p>
-  <strong>Rg:</strong>
-  <%= @customer.rg %>
-</p>
-
-<p>
-  <strong>Rg date:</strong>
-  <%= @customer.rg_date %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @customer.cpf %>
-</p>
-
-<p>
-  <strong>Mother:</strong>
-  <%= @customer.mother %>
-</p>
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
