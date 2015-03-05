@@ -29,6 +29,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'rails_12factor', group: :production
 gem 'puma'
+gem 'certified'
 
 
 # Use ActiveModel has_secure_password
