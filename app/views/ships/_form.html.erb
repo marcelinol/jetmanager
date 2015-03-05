@@ -31,6 +31,10 @@
     <%= f.label :registration_due_date %><br>
     <%= f.datetime_select :registration_due_date %>
   </div>
+  <div class="field">
+    <%= f.label :customer %>
+    <%= f.select(:customer_id, Customer.all.collect {|customer| [ customer.name, customer.id ] }) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
