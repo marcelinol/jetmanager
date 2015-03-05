@@ -1,29 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @ship.name %>
 </p>
 
 <p>
-  <strong>Kind:</strong>
+  <strong>Tipo:</strong>
   <%= @ship.kind %>
 </p>
 
 <p>
-  <strong>Registration number:</strong>
+  <strong>Número de inscrição:</strong>
   <%= @ship.registration_number %>
 </p>
 
 <p>
-  <strong>Insurance due date:</strong>
+  <strong>Data de vencimento do seguro:</strong>
   <%= @ship.insurance_due_date %>
 </p>
 
 <p>
-  <strong>Registration due date:</strong>
+  <strong>Data de vencimento do documento:</strong>
   <%= @ship.registration_due_date %>
 </p>
+  
+<p>
+  <strong>Cliente:</strong>
+  <%= @ship.customer.name %>
+</p>
 
-<%= link_to 'Edit', edit_ship_path(@ship) %> |
-<%= link_to 'Back', ships_path %>
+
+<%= link_to 'Editar', edit_ship_path(@ship) %> |
+<%= link_to 'Ir para a lista de embarcações', ships_path %>
+<%= link_to 'Ir para a lista de clientes', customers_path %>
