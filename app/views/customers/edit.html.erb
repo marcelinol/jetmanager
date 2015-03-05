@@ -1,6 +1,6 @@
-<h1>Editing Customer</h1>
+<h1>Edição de Cliente</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @customer %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to "Criar Embarcação", :controller => "ships", :action => "new", :customer_id => @customer.id %>
+<%= link_to 'Ver cliente', @customer %> |
+<%= link_to 'Lista de clientes', customers_path %>
