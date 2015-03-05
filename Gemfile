@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -25,9 +26,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #MY GEMS
 gem 'devise'
-gem 'pry-doc'
-gem 'pry'
-gem 'better_errors'
 gem 'bootstrap-sass', '~> 3.3.3'
 
 
@@ -41,6 +39,9 @@ gem 'bootstrap-sass', '~> 3.3.3'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'pry-doc'
+  gem 'pry'
+  gem 'better_errors'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
