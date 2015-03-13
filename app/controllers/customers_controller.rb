@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
-
+  before_save :update_fields_complete
+  
   # GET /customers
   # GET /customers.json
   def index
