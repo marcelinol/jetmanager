@@ -1,16 +1,16 @@
 class Customer < ActiveRecord::Base
-
+  after_validation :update_fields_complete
   has_many :ships, dependent: :destroy
 
   def update_fields_complete
-    self.fields_complete = self.attributes.values.include?(nil)
+    self.fields_complete = check_fields_status
   end
 
   private
-  def self.check_fields_status
-    complete = self.fields_complete
+  def check_fields_status
+    complete = true
     self.attributes.each do |attr, value|
-      return false if (value.nil? && attr != 'fields_complete')
+      complete = false if (value.nil? && attr != 'fields_complete')
     end
     complete
   end

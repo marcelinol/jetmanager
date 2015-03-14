@@ -1,7 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
-  before_save :update_fields_complete
-  
+
   # GET /customers
   # GET /customers.json
   def index
@@ -26,7 +25,6 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
-
     respond_to do |format|
       if @customer.save
         format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
