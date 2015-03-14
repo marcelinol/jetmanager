@@ -17,7 +17,7 @@
     <tbody>
       <% @customers.each do |customer| %>
         <% @ship = customer.ships.last %>
-        <tr>
+        <tr class=<%= customer.id %>>
           <td><%= link_to customer.name, customer %></td>
           <td><%= customer.cellphone %></td>
           <% if @ship %>
@@ -39,4 +39,3 @@
     <%= link_to 'Criar novo cliente', new_customer_path %>
   </button>
 </p>
-
