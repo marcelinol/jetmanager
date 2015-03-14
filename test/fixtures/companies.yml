@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  emailÇstring: MyString
+  email: MyString
   phone: MyString
   address: MyString
   cnpj: MyString
 
 two:
   name: MyString
-  emailÇstring: MyString
+  email: MyString
   phone: MyString
   address: MyString
   cnpj: MyString
