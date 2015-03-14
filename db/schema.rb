@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150313114513) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.boolean  "status_complete"
-    t.boolean  "fields_complete"
+    t.boolean  "fields_complete"  default: false
   end
 
   create_table "ships", force: :cascade do |t|
