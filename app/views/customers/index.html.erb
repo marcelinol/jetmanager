@@ -11,6 +11,7 @@
         <th>Celular</th>
         <th>Embarcação</th>
         <th>Vencimento do Seguro</th>
+        <th>Status</th>
       </tr>
     </thead>
 
@@ -21,10 +22,15 @@
           <td><%= link_to customer.name, customer %></td>
           <td><%= customer.cellphone %></td>
           <% if @ship %>
-            <td><%= link_to @ship.name, @ship  %></td>
+            <td><%= link_to @ship.name, @ship %></td>
             <td><%= @ship.insurance_due_date %>
           <% else %>
             <td></td><td></td>
+          <% end %>
+          <% if customer.fields_complete %>
+            <td><span class='label label-danger'>Faltando dados</span></td>
+          <% else %>
+            <td><span class='label label-success'>Dados completos</span></td>
           <% end %>
           <td><%= link_to 'Editar', edit_customer_path(customer) %></td>
         </tr>
