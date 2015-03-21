@@ -1,5 +1,5 @@
 class Ship < ActiveRecord::Base
 
-  belongs_to :customer, :company
+  belongs_to :customer
 
 end
