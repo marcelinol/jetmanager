@@ -31,8 +31,11 @@ gem 'rails_12factor', group: :production
 gem 'puma'
 gem 'certified'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-gem 'rspec'
 
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails', '~> 3.0'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
