@@ -35,6 +35,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 group :development, :test do
   gem 'rspec'
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl'
 end
 
 # Use ActiveModel has_secure_password
