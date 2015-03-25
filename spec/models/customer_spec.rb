@@ -22,7 +22,6 @@ describe Customer do
         expect(customer.fields_complete).to be
       end
     end
-
   end
 
 end
