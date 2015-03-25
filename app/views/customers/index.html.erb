@@ -11,20 +11,26 @@
         <th>Celular</th>
         <th>Embarcação</th>
         <th>Vencimento do Seguro</th>
+        <th>Status</th>
       </tr>
     </thead>
 
     <tbody>
       <% @customers.each do |customer| %>
         <% @ship = customer.ships.last %>
-        <tr>
+        <tr class='customer-id' id=<%= customer.id %>>
           <td><%= link_to customer.name, customer %></td>
           <td><%= customer.cellphone %></td>
           <% if @ship %>
-            <td><%= link_to @ship.name, @ship  %></td>
+            <td><%= link_to @ship.name, @ship %></td>
             <td><%= @ship.insurance_due_date %>
           <% else %>
             <td></td><td></td>
+          <% end %>
+          <% if customer.fields_complete %>
+            <td><span class='label label-success'>Dados completos</span></td>
+          <% else %>
+            <td><span class='label label-danger'>Faltando dados</span></td>
           <% end %>
           <td><%= link_to 'Editar', edit_customer_path(customer) %></td>
         </tr>
@@ -39,4 +45,3 @@
     <%= link_to 'Criar novo cliente', new_customer_path %>
   </button>
 </p>
-

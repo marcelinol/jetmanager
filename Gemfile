@@ -31,6 +31,7 @@ gem 'rails_12factor', group: :production
 gem 'puma'
 gem 'certified'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'rspec'
 
 
 # Use ActiveModel has_secure_password
@@ -55,4 +56,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
