@@ -37,6 +37,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'pry-doc'
+  gem 'pry'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -55,7 +57,5 @@ end
 # gem 'capistrano-rails', group: :development
 
 group :development do
-  gem 'pry-doc'
-  gem 'pry'
   gem 'better_errors'
 end
