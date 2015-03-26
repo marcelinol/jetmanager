@@ -3,7 +3,6 @@ require 'rails_helper'
 describe CustomersController do
 
   describe "GET index" do
-
     context 'logged user' do
       it 'renders customers index' do
         get :index
@@ -60,19 +59,32 @@ describe CustomersController do
     end
 
     describe "PUT 'update'" do
+      # http://stackoverflow.com/questions/24682671/how-to-complete-the-rspec-put-controller-test-from-scaffold
       context 'all right' do
         !let(:customer) { FactoryGirl.create(:customer) }
-        before { put :update, id: customer.id, customer: {} }
-
-        it 'returns success' do
-          binding.pry
-          expect(response).to be_success
-        end
+        let(:new_attr) { { name: 'xunda' } }
 
         it 'redirects to customer path' do
+          put :update, id: customer.id, customer: new_attr
+          customer.reload
           expect(response).to redirect_to(customer_path(customer))
         end
       end
     end
 
+    describe "POST 'create'" do
+      context 'when create successfully' do
+        it 'renders customer path' do
+          post :create, customer: {name: 'xunda'}
+          expect(response).to redirect_to(customer_path(Customer.last))
+        end
+      end
+    end
+
+    describe "GET 'new'" do
+      it 'assigns a new customer' do
+        get :new
+        expect(assigns(:customer)).not_to be_nil
+      end
+    end
 end
