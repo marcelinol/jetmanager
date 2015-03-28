@@ -21,7 +21,7 @@ describe CustomersController do
 
     describe "GET 'show'" do
 
-      let(:customer) { FactoryGirl.create(:customer) }
+      let(:customer) { create(:customer) }
       before { get :show, id: customer.id }
 
       context 'all right' do
@@ -41,7 +41,7 @@ describe CustomersController do
 
     describe  "GET 'edit'" do
       context 'all right' do
-        let(:customer) { FactoryGirl.create(:customer) }
+        let(:customer) { create(:customer) }
         before { get :edit, id: customer.id }
 
         it 'assigns customer' do
@@ -61,7 +61,7 @@ describe CustomersController do
     describe "PUT 'update'" do
       # http://stackoverflow.com/questions/24682671/how-to-complete-the-rspec-put-controller-test-from-scaffold
       context 'all right' do
-        !let(:customer) { FactoryGirl.create(:customer) }
+        !let(:customer) { create(:customer) }
         let(:new_attr) { { name: 'xunda' } }
 
         it 'redirects to customer path' do
