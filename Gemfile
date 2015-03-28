@@ -31,6 +31,7 @@ gem 'rails_12factor', group: :production
 gem 'puma'
 gem 'certified'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :development, :test do
   gem 'rspec'
